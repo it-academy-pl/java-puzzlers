@@ -14,6 +14,11 @@ public class ExtendedHashSet<E> extends HashSet<E> {
     public ExtendedHashSet() {
     }
 
+    public ExtendedHashSet(int initialCapacity, float loadFactor, int addCount) {
+        super(initialCapacity, loadFactor);
+        this.addCount = addCount;
+    }
+
     @Override public boolean add(E e) {
         addCount++;
         return super.add(e);
@@ -35,7 +40,9 @@ public class ExtendedHashSet<E> extends HashSet<E> {
         list.add("second");
         list.add("third");
         s.addAll(list);
-        System.out.println("Added " + s.getAddCount() + " elements");
+        // question: what do you expect to be returned when getAddCount() is invoked?
+        // what is actually returned?
+        // why?
     }
 
 }
