@@ -1,24 +1,15 @@
 package pl.itacademy.composition_over_inheritance;
 
-import sun.applet.Main;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 // Broken - Inappropriate use of inheritance!
-public class ExtendedHashSet<E> extends HashSet<E> {
+public class ExtendedSet<E> extends DecoratedSet<E> {
 
     // The number of attempted element insertions
     private int addCount = 0;
 
-    public ExtendedHashSet() {
-    }
-
-    public ExtendedHashSet(int initialCapacity, float loadFactor, int addCount) {
-        super(initialCapacity, loadFactor);
-        this.addCount = addCount;
+    public ExtendedSet(Set<E> set) {
+        super(set);
     }
 
     @Override
@@ -38,7 +29,7 @@ public class ExtendedHashSet<E> extends HashSet<E> {
     }
 
     public static void main(String[] args) {
-        ExtendedHashSet<String> s = new ExtendedHashSet<>();
+        ExtendedSet<String> s = new ExtendedSet<>(new HashSet<>());
         List<String> list = new ArrayList<>();
         list.add("first");
         list.add("second");
@@ -48,11 +39,6 @@ public class ExtendedHashSet<E> extends HashSet<E> {
         // what is actually returned?
         // why?
 
-        ExtendedHashSet test = new ExtendedHashSet();
-
-        int a = test.getAddCount();
         System.out.println(s.getAddCount());
-
     }
-
 }
