@@ -1,30 +1,24 @@
 package pl.itacademy.composition_over_inheritance;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
-// Broken - Inappropriate use of inheritance!
-public class ExtendedHashSet<E> extends HashSet<E> {
+public class ExtendedSet<E> extends DecoratedSet<E> {
 
-    // The number of attempted element insertions
     private int addCount = 0;
 
-    public ExtendedHashSet() {
+
+    public ExtendedSet(Set set) {
+        super(set);
     }
 
-    public ExtendedHashSet(int initialCapacity, float loadFactor, int addCount) {
-        super(initialCapacity, loadFactor);
-        this.addCount = addCount;
-    }
-
-    @Override public boolean add(E e) {
+    @Override
+    public boolean add(E e) {
         addCount++;
         return super.add(e);
     }
 
-    @Override public boolean addAll(Collection<? extends E> c) {
+    @Override
+    public boolean addAll(Collection<? extends E> c) {
         addCount += c.size();
         return super.addAll(c);
     }
@@ -34,7 +28,7 @@ public class ExtendedHashSet<E> extends HashSet<E> {
     }
 
     public static void main(String[] args) {
-        ExtendedHashSet<String> s = new ExtendedHashSet<>();
+        ExtendedSet<String> s = new ExtendedSet<>(new HashSet<>());
         List<String> list = new ArrayList<>();
         list.add("first");
         list.add("second");
