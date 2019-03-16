@@ -23,7 +23,7 @@ public class IntegerPool {
         //System.out.println(intLiteral_1== intLiteral_2);
         System.out.println("One integer created with constructor, another one with valueOf");
         //System.out.println(intNew_2== intValueOf);
-        System.out.println("One integer created with literal, another one with valueOf");
+        System.out.println("One integer screated with literal, another one with valueOf");
         //System.out.println(intLiteral_1== intValueOf);
 
         Integer intBiggerThan127 = Integer.valueOf(128);
