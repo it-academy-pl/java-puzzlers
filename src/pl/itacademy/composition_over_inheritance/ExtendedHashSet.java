@@ -1,5 +1,7 @@
 package pl.itacademy.composition_over_inheritance;
 
+import sun.applet.Main;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -19,12 +21,14 @@ public class ExtendedHashSet<E> extends HashSet<E> {
         this.addCount = addCount;
     }
 
-    @Override public boolean add(E e) {
+    @Override
+    public boolean add(E e) {
         addCount++;
         return super.add(e);
     }
 
-    @Override public boolean addAll(Collection<? extends E> c) {
+    @Override
+    public boolean addAll(Collection<? extends E> c) {
         addCount += c.size();
         return super.addAll(c);
     }
@@ -40,7 +44,16 @@ public class ExtendedHashSet<E> extends HashSet<E> {
         list.add("second");
         list.add("third");
         s.addAll(list);
-        System.out.println("number of elements: " + s.getAddCount());
+
+        // question: what do you expect to be returned when getAddCount() is invoked?
+        // what is actually returned?
+        // why?
+
+        ExtendedHashSet test = new ExtendedHashSet();
+
+        int a = test.getAddCount();
+        System.out.println(s.getAddCount());
+
     }
 
 }

@@ -3,6 +3,8 @@ package pl.itacademy.composition_over_inheritance;
 import java.util.*;
 
 public class ExtendedSet<E> extends DecoratedSet<E>{
+
+
     // The number of attempted element insertions
     private int addCount = 0;
 
@@ -33,6 +35,11 @@ public class ExtendedSet<E> extends DecoratedSet<E>{
         list.add("second");
         list.add("third");
         s.addAll(list);
+
         System.out.println("number of elements: " + s.getAddCount());
     }
 }
+
+        // question: what do you expect to be returned when getAddCount() is invoked?
+        // what is actually returned?
+        // why?

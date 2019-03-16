@@ -6,10 +6,19 @@ import java.util.Set;
 import java.util.Spliterator;
 
 public class DecoratedSet<E> implements Set<E> {
+
     private Set<E> set;
 
     public DecoratedSet(Set<E> set) {
         this.set = set;
+    }
+
+    public DecoratedSet() {
+
+    }
+
+    public DecoratedSet(int initialCapacity, float loadFactor) {
+
     }
 
     @Override
