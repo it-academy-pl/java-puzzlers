@@ -5,11 +5,21 @@ This puzzler demonstrates pitfalls related to double memory structure
 Read more: https://en.wikipedia.org/wiki/Double-precision_floating-point_format
  */
 
+import java.math.BigDecimal;
+
 public class DoublePrecision {
 
     private static final double THRESHOLD = 0.000000001;
 
     public static void main(String[] args) {
+
+        BigDecimal bigDecimal1 = BigDecimal.valueOf(11.0);
+        BigDecimal bigDecimal2 = BigDecimal.valueOf(0.1);
+        for (int i = 0; i < 10; i++) {
+            bigDecimal1 = bigDecimal1.add(bigDecimal2);
+        }
+        System.out.println("Big Decimal value: " + bigDecimal1);
+
 
         double d1 = 0.0;
         for (int i = 0; i < 10; i++) {
