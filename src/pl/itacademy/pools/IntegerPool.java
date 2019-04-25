@@ -16,20 +16,20 @@ public class IntegerPool {
         Integer intValueOf = Integer.valueOf(3);
 
         System.out.println("Two integers with same value created with constructor");
-        //System.out.println(intNew_1== intNew_2);
+        System.out.println(intNew_1== intNew_2);
         System.out.println("Two integers with same value created with constructor");
-        //System.out.println(intNew_1== intLiteral_1);
+        System.out.println(intNew_1== intLiteral_1);
         System.out.println("Two integers with same value created with literal");
-        //System.out.println(intLiteral_1== intLiteral_2);
+        System.out.println(intLiteral_1== intLiteral_2);
         System.out.println("One integer created with constructor, another one with valueOf");
-        //System.out.println(intNew_2== intValueOf);
+        System.out.println(intNew_2== intValueOf);
         System.out.println("One integer screated with literal, another one with valueOf");
-        //System.out.println(intLiteral_1== intValueOf);
+        System.out.println(intLiteral_1== intValueOf);
 
         Integer intBiggerThan127 = Integer.valueOf(128);
         Integer anotherIntBiggerThan127 = Integer.valueOf(128);
-        //System.out.println("Two integers bigger than 127 with same value created with literal");
-        //System.out.println(intBiggerThan127==anotherIntBiggerThan127);
+        System.out.println("Two integers bigger than 127 with same value created with literal");
+        System.out.println(intBiggerThan127==anotherIntBiggerThan127);
 
     }
 }
