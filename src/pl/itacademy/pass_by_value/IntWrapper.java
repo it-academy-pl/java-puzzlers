@@ -1,9 +1,9 @@
 package pl.itacademy.pass_by_value;
 
-public class IntegerWrapper {
+public class IntWrapper {
     private int value;
 
-    public IntegerWrapper(int value) {
+    public IntWrapper(int value) {
         this.value = value;
     }
 
@@ -11,7 +11,8 @@ public class IntegerWrapper {
         return value;
     }
 
-    public void incrementByOne() {
-        value++;
+    public void setValue(int value) {
+        this.value = value;
     }
+
 }

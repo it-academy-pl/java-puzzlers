@@ -1,11 +1,14 @@
 package pl.itacademy.garbage_collector;
 
+/*
+https://www.youtube.com/watch?v=CdAmS9H93q4
+https://www.youtube.com/watch?v=XrNgF2sbhGQ
+*/
 public class GarbageCollector {
 
         public static void main(String[] args) throws InterruptedException
         {
             Runtime runtime = Runtime.getRuntime();
-
             long availableBytes = runtime.freeMemory();
             System.out.println("Available memory at start: " + availableBytes / 1024 + "k");
 
