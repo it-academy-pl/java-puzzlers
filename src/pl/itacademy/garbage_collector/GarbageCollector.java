@@ -10,6 +10,7 @@ public class GarbageCollector {
         {
             Runtime runtime = Runtime.getRuntime();
             long availableBytes = runtime.freeMemory();
+            Thread.sleep(20_000);
             System.out.println("Available memory at start: " + availableBytes / 1024 + "k");
 
             for (int i=0; i<1000000; i++)
@@ -32,6 +33,7 @@ public class GarbageCollector {
             /* this is command **suggests** garbage collector to do the memory cleanup. However it
             does not guarantee that the GC will do its work.
              */
+            Thread.sleep(10_000);
             System.gc();
 
             availableBytes = runtime.freeMemory();
