@@ -12,14 +12,9 @@ public class RemoveFromCollection {
             listOfIntegers.add(i);
         }
 
-        for (Integer value : listOfIntegers) {
-            listOfIntegers.remove(value);
-        }
+        //task - remove all elements from collection, size should equal to 0
+        System.out.println(listOfIntegers.size());
 
-/*        for(Iterator<Integer> value = listOfIntegers.iterator(); value.hasNext(); ) {
-            Integer element = value.next();
-            listOfIntegers.remove(element);
-        }*/
 
     }
 }
