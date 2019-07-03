@@ -12,8 +12,8 @@ public class RemoveFromCollection {
             listOfIntegers.add(i);
         }
 
-        //task - remove all elements from collection, size should equal to 0
-        System.out.println(listOfIntegers.size());
+        //1. print all integers using streams
+        //2. remove only even numbers from collection
 
 
     }
