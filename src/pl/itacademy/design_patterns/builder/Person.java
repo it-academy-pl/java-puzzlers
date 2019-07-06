@@ -24,7 +24,7 @@ public class Person {
         private PersonBuilder() {
         }
 
-        public static PersonBuilder aPerson() {
+        public static PersonBuilder builder() {
             return new PersonBuilder();
         }
 
