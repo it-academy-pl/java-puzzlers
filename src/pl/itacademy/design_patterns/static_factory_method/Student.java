@@ -1,5 +1,6 @@
 package pl.itacademy.design_patterns.static_factory_method;
 
+import java.time.Instant;
 import java.util.Date;
 
 /*
@@ -24,7 +25,22 @@ public class Student {
     private String surname;
     private Date created;
 
-/*    static public Student createStudent(String name, String surname) {
-        return new Student
-    }*/
+    public static Student createStudentWithCreationDate(String name, String surname) {
+        return new Student(name, surname);
+    }
+
+    private Student(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+        created = Date.from(Instant.now());
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", created=" + created +
+                '}';
+    }
 }
